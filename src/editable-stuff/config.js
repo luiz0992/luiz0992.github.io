@@ -67,7 +67,7 @@ const experiences = {
       role: "AI Researcher Lead",
       company: "Delphos Labs Inc.",
       location: "Houston, TX",
-      companylogo: require("../assets/img/delphos.svg"),
+      companylogo: require("../assets/img/delphos.png"),
       date: "Jan 2025 – Present",
       periodDetail: "AI Researcher Lead (Nov 2025 – Present) · AI Researcher (Jan 2025 – Oct 2025)",
       summary:
@@ -116,7 +116,7 @@ const experiences = {
       role: "Researcher — NASA Solar Dynamics Observatory",
       company: "Frontier Development Lab / SETI Institute",
       location: "Mountain View, CA",
-      companylogo: require("../assets/img/fdl.svg"),
+      companylogo: require("../assets/img/fdl.png"),
       date: "Jun 2019 – May 2021",
       periodDetail: "AI for Space Science Research",
       summary:
