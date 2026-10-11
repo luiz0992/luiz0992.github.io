@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/badge/LinkedIn-Luiz%20dos%20Santos-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="https://bit.ly/2TV4aik">
-    <img src="https://img.shields.io/badge/Scholar-Publications-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white" alt="Google Scholar" />
+    <img src="https://img.shields.io/badge/Google_Scholar-Publications-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Scholar" />
   </a>
   <a href="mailto:luiz.fernando0992@gmail.com">
     <img src="https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
