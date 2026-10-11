@@ -28,7 +28,7 @@ const mainBody = {
     {
       name: "Google Scholar",
       image: "fa-google-scholar",
-      url: "https://bit.ly/2TV4aik",
+      url: "https://scholar.google.com/citations?user=ax1Bv-QAAAAJ",
     },
     {
       name: "Email",
@@ -55,7 +55,7 @@ const about = {
     { value: "Honors", label: "Nobel Scholar" },
   ],
   resume: require("../editable-stuff/resume.pdf"),
-  scholarUrl: "https://bit.ly/2TV4aik",
+  scholarUrl: "https://scholar.google.com/citations?user=ax1Bv-QAAAAJ",
 };
 
 // EXPERIENCE SECTION
@@ -101,7 +101,7 @@ const experiences = {
       role: "Postdoctoral Associate — AI for Space Sciences",
       company: "CIRES / University of Colorado Boulder",
       location: "Boulder, CO",
-      companylogo: require("../assets/img/cires.svg"),
+      companylogo: require("../assets/img/cu-boulder.svg"),
       date: "May 2021 – Mar 2022",
       periodDetail: "Postdoctoral Research",
       summary:
@@ -150,7 +150,7 @@ const publications = {
   show: true,
   heading: "Research & Publications",
   subheading: "Peer-reviewed papers in machine learning, heliophysics, and remote sensing.",
-  googleScholarUrl: "https://bit.ly/2TV4aik",
+  googleScholarUrl: "https://scholar.google.com/citations?user=ax1Bv-QAAAAJ",
   honors: [
     {
       title: "John C. Mather Nobel Scholar",
@@ -169,7 +169,7 @@ const publications = {
       journal: "Astronomy & Astrophysics (A&A)",
       year: "2021",
       description: "Developed a deep convolutional neural network framework to autocalibrate multi-channel EUV instruments on NASA's Solar Dynamics Observatory without physical recalibration hardware.",
-      link: "https://bit.ly/2TV4aik",
+      link: "https://doi.org/10.1051/0004-6361/202040051",
       badge: "Astronomy & Astrophysics",
     },
     {
@@ -177,7 +177,7 @@ const publications = {
       journal: "Solar Physics",
       year: "2020",
       description: "Designed a deep learning pipeline to identify interplanetary coronal mass ejection flux ropes from in situ magnetic field time series, advancing automated space weather prediction.",
-      link: "https://bit.ly/2TV4aik",
+      link: "https://doi.org/10.1007/s11207-020-01697-x",
       badge: "Solar Physics",
     },
     {
@@ -185,7 +185,7 @@ const publications = {
       journal: "The Astrophysical Journal (ApJ)",
       year: "2022",
       description: "Investigated GAN and U-Net generative architectures for synthesizing solar extreme ultraviolet observations across disparate spectral wavelengths.",
-      link: "https://bit.ly/2TV4aik",
+      link: "https://doi.org/10.3847/1538-4357/ac867b",
       badge: "The Astrophysical Journal",
     },
   ],
@@ -319,7 +319,7 @@ const getInTouch = {
   email: "luiz.fernando0992@gmail.com",
   linkedIn: "https://www.linkedin.com/in/luiz-fernando-guedes-dos-santos-641812109/",
   github: "https://github.com/luiz0992",
-  scholar: "https://bit.ly/2TV4aik",
+  scholar: "https://scholar.google.com/citations?user=ax1Bv-QAAAAJ",
 };
 
 export {
