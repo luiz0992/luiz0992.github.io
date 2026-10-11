@@ -1,217 +1,96 @@
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <h1 align="center">Developer's Portfolio ✨</h1>
+# Luiz F. G. dos Santos, Ph.D.
 
-  <p align="center">
-    It is a personal static website/portfolio template hosted with GitHub Pages, built to showcase my recent projects. Site URL / Demo: 
-    <a href="https://hashirshoaeb.github.io">hashirshoaeb.github.io</a>
-    <br />
-    <br />
-    <a href="https://hashirshoaeb.com">About Me</a>
-    ·
-    <a href="https://github.com/hashirshoaeb/home/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/hashirshoaeb/home/issues">Request Feature</a>
-  </p>
+<p align="center">
+  <strong>Machine Learning Engineer & AI Research Lead</strong><br />
+  LLM Systems · Distributed Training · Applied AI · Scalable ML Infrastructure
 </p>
 
-![GitHub contributors](https://img.shields.io/github/contributors/hashirshoaeb/home?color=ffcc66&style=for-the-badge)
-![GitHub stars](https://img.shields.io/github/stars/hashirshoaeb/home?color=ffcc66&style=for-the-badge)
-[![GitHub forks](https://img.shields.io/github/forks/hashirshoaeb/home?style=for-the-badge)](https://github.com/hashirshoaeb/star_book/network)
-[![GitHub issues](https://img.shields.io/github/issues/hashirshoaeb/home?color=ffcc66&style=for-the-badge)](https://github.com/hashirshoaeb/star_book/issues)
-[![GitHub license](https://img.shields.io/github/license/hashirshoaeb/home?style=for-the-badge)](https://github.com/hashirshoaeb/home/blob/master/LICENSE)
-[![Twitter Follow](https://img.shields.io/twitter/follow/hashirshoaeb?color=ffcc66&logo=twitter&logoColor=ffffff&style=for-the-badge)](https://twitter.com/hashirshoaeb)
+<p align="center">
+  <a href="https://luiz0992.github.io/">
+    <img src="https://img.shields.io/badge/Website-luiz0992.github.io-blue?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Website" />
+  </a>
+  <a href="https://www.linkedin.com/in/luiz-fernando-guedes-dos-santos-641812109/">
+    <img src="https://img.shields.io/badge/LinkedIn-Luiz%20dos%20Santos-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://bit.ly/2TV4aik">
+    <img src="https://img.shields.io/badge/Scholar-Publications-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white" alt="Google Scholar" />
+  </a>
+  <a href="mailto:luiz.fernando0992@gmail.com">
+    <img src="https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+</p>
 
-[![Site preview](/public/social-image.png)](https://hashirshoaeb.github.io/)
+---
 
-## Table of Contents
+This repository contains the source code for my personal portfolio and academic research website, hosted on GitHub Pages at **[https://luiz0992.github.io/](https://luiz0992.github.io/)**.
 
-- [Technology Stack 🛠️](#technology-stack-)
-- [Structure ⚓](#structure-)
-- [Sharing 💗](#sharing-)
-- [Prerequisites 🍪](#prerequisites-)
-- [Setup And Deployment 🔧](#setup-and-deployment-)
-- [Contributing 🙌](#contributing-)
-- [Issues](#issues)
-- [Upcoming Features / Improvements 🔗](#upcoming-features-/-improvements-)
-- [Showcase 🚀](#showcase-)
-- [Versão em Português :brazil:](#versao-em-portugues-)
+## Overview
 
-## Technology Stack 🛠️
+I am an **AI Research Lead** and **Machine Learning Engineer** with a **Ph.D. in Physics** from The Catholic University of America (conducted with NASA Goddard Space Flight Center) and a **John C. Mather Nobel Scholar**. My work bridges theoretical physics, computational mathematics, and production deep learning systems.
 
-Dependencies defined in package.json:
+### Key Highlights
+- **Delphos Labs Inc.** — AI Researcher Lead directing core ML training infrastructure, distributed pretraining/fine-tuning (Composer, FlashAttention 3), custom tokenizers, and low-latency production inference (TensorRT-LLM, Triton, Kubernetes).
+- **Shell** — Principal Data Scientist leading enterprise GenAI initiatives, RAG systems with contextual grounding, autonomous LLM agents, and deep learning on unstructured data.
+- **NASA GSFC & Frontier Development Lab** — Space sciences machine learning research, including CNN-based autocalibration for the Solar Dynamics Observatory (published in *Astronomy & Astrophysics*) and deep neural networks for flux rope detection (*Solar Physics*).
 
-[Reactjs](https://reactjs.org/)
-| [Bootstrap](https://getbootstrap.com/)
-| [Typist](https://github.com/jstejada/react-typist)
-| [GitHub API](https://developer.github.com/v3/repos/)
-| [Instagram API](https://www.instagram.com/developer/embedding/)
+---
 
-## Structure ⚓
+## Website Sections
 
-- Navigation bar (optional)
-- Body
-  - Name | Profession
-  - Contact / Follow / Find me / Facebook / LinkedIn / GitHub / Instagram / Email / CodePen
-  - Resume | About me
-- About Me
-  - Display picture (optional)
-  - About myself, my Interests, Goals and Hobbies
-  - Things I'm good at (Skills)
-  - Resume button
-- Recent Projects (using GitHub API) (optional)
-- Leadership (optional)
-  - Paragraph
-  - Carousel images
-- Skills (optional)
-  - Technical Skills
-  - Soft Skills
-- Footer
-  - Footer Note (optional)
-  - Copyrights - open source
-  - Acknowledgements(
+- **Hero & Identity** — Overview of credentials, focus areas, and quick navigation.
+- **About Me** — Research background, physics foundation, and technical philosophy.
+- **Experience Timeline** — Detailed career history spanning Delphos Labs, Shell, CIRES/CU Boulder, FDL/SETI, and NASA Goddard, complete with accomplishments and technology stacks.
+- **Research & Publications** — Peer-reviewed papers in *Astronomy & Astrophysics (A&A)*, *Solar Physics*, and *The Astrophysical Journal (ApJ)*, along with awards and honors.
+- **Education** — Ph.D. in Physics (distinction), M.S. in Physics, and B.S. in Physics.
+- **Technical Expertise** — Categorized competency grids covering LLM systems, GPU training & acceleration, inference serving, and data engineering.
+- **Featured Projects** — Open-source starter kits, performance builds, and scientific templates.
+- **Contact** — Direct email, LinkedIn, and research profile links.
 
-## Sharing 💗
+---
 
-Project is open source. Feel free to make your own version. All you need to do is to fork this repository, edit [src/editable-stuff/config.js](./src/editable-stuff/config.js) and add resume. Mark star ⭐ if you like the project.
+## Tech Stack & Architecture
 
-## Prerequisites 🍪
+- **Frontend**: React, React Router
+- **Styling**: Sass (SCSS), Bootstrap, Custom Dark/Light Executive Theme
+- **Icons & Fonts**: Font Awesome, Google Fonts (Inter)
+- **Deployment**: GitHub Pages via `gh-pages` branch
 
-You should have [Node.js](https://nodejs.org/en/) and [Git](https://git-scm.com/) installed on your PC. You should also own a GitHub account.
+---
 
-## Setup And Deployment 🔧
+## Local Development
 
-1. To Get Started, Fork this repository to your GitHub account:
-2. Clone the forked repo from your account using:
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm
 
-   ```bash
-     git clone https://github.com/<your-username>/home.git
-   ```
+### Setup
 
-3. Open in editor and edit [src/editable-stuff/config.js](./src/editable-stuff/config.js) file.
+```bash
+# Clone the repository
+git clone https://github.com/luiz0992/luiz0992.github.io.git
+cd luiz0992.github.io
 
-4. Add your resume as <resume.pdf> in place of [src/editable-stuff/resume.pdf](./src/editable-stuff/)
+# Install dependencies
+npm install
 
-5. Edit [title](./public/index.html#L34) and meta [description](./public/index.html#L13) in [public/index.html](./public/index.html).
-6. Change URL in [package.json](./package.json) file:
+# Start development server
+npm start
+```
 
-   ```json
-    "homepage": "https://<your-username>.github.io/home"
-   ```
+Runs the application locally at `http://localhost:3000`.
 
-   Or for deployment at custom domain, refer [create-react-app.dev](https://create-react-app.dev/docs/deployment/#step-1-add-homepage-to-packagejson)
+### Production Build & Deployment
 
-7. After editing run the following bash commands:
+```bash
+# Build the optimized production bundle
+npm run build
 
-   ```bash
-   npm install
-   npm start
-   ```
+# Deploy directly to GitHub Pages
+npm run deploy
+```
 
-8. To deploy website, run:
+---
 
-   ```bash
-    npm run build
-    npm run deploy
-   ```
+## License
 
-   Or for deployment at \<username>.github.io, refer [READMEdocs/custom-deployment.md](./READMEdocs/custom-deployment.md) and [pages.js](./pages.js)
-
-9. Congrats your site is up and running. To see it live, visit:
-
-   ```https
-     https://<your-username>.github.io/home
-   ```
-
-10. To change the thumbnail image:
-
-    - Navigate to the "public" folder.  
-    - There you will see "social-image.png".  
-    - Delete it.   
-    - Take a screenshot of your version and rename it "social-image.png" and place it there.  
-    
-   Next time if you make changes, repeat from step 8.
-
-Facing issues? Feel free to contact at hashirshoaeb@gmail.com.
-
-## Contributing 🙌
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## Issues
-
-If anyone is looking to make some contribution, the following are issues that you can solve:
-
-- [ ] UI improvements
-- [ ] Code optimization
-- [x] Routing
-- [ ] SEO
-
-## Showcase 🚀
-
-Have you changed something in the code to create your own version? Feel free to share with me, I will list them in this space.
-
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/justiceserv/justiceserv.github.io">
-        <img src="READMEdocs/justiceserv-github-io-home.gif" width="300px" alt="" />
-        <br />
-        <sub><b>Guhyun Chung</b></sub>
-      </a>
-      <br />
-    </td>
-    <td align="center">
-      <a href="https://github.com/hamzasohail0/home/">
-        <img src="READMEdocs/hamzasohail0-github-io-home.gif" width="300px" alt="" />
-        <br />
-        <sub><b>Hamza Sohail</b></sub>
-      </a>
-      <br />
-    </td>
-    <td align="center">
-      <a href="https://github.com/AymunTariq/home/">
-        <img src="READMEdocs/aymuntariq-github-io-home.gif" width="300px" alt="" />
-        <br />
-        <sub><b>Aymun Tariq</b></sub>
-      </a>
-      <br />
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/anaashrafi/home/">
-        <img src="READMEdocs/anaashrafi-github-io-home.gif" width="300px" alt="" />
-        <br />
-        <sub><b>Ana Ashrafi</b></sub>
-      </a>
-      <br />
-    </td>
-    <td align="center">
-      <a href="https://github.com/jefferyjohn/home/">
-        <img src="READMEdocs/jefferyjohn-github-io-home.gif" width="300px" alt="" />
-        <br />
-        <sub><b>Jeffery John</b></sub>
-      </a>
-      <br />
-    </td>
-    <td align="center">
-      <a href="https://github.com/remimestdagh/home/">
-        <img src="READMEdocs/remimestdagh-github-io-home.gif" width="300px" alt="" />
-        <br />
-        <sub><b>Remi Mestdagh</b></sub>
-      </a>
-      <br />
-    </td>
-  </tr>
-</table>
-
-## Versão em Português :brazil:
-
-Esse projeto foi traduzido para português! Se você gostou dele e quer criar a sua própria versão, confira o repositório do [@tashima42](https://github.com/tashima42) em [https://github.com/Tashima42/home](https://github.com/Tashima42/home).
-Novas contribuições e revisões na tradução são muito bem vindas!
-
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/hashirshoaeb/home.svg)](https://starchart.cc/hashirshoaeb/home)
+This project is licensed under the [MIT License](LICENSE).
