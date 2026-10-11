@@ -27,7 +27,7 @@ const mainBody = {
     },
     {
       name: "Google Scholar",
-      image: "fa-google",
+      image: "fa-google-scholar",
       url: "https://bit.ly/2TV4aik",
     },
     {

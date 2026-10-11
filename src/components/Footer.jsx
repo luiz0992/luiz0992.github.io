@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import { mainBody } from "../editable-stuff/config.js";
+import SocialIcon from "./common/SocialIcon";
 
 const Footer = ({ children }) => {
   return (
@@ -28,7 +29,7 @@ const Footer = ({ children }) => {
                   aria-label={icon.name || icon.image}
                   style={{ fontSize: "1.1rem" }}
                 >
-                  <i className={`fab ${icon.image}`} />
+                  <SocialIcon icon={icon} size="1.1rem" />
                 </a>
               ))}
             </div>

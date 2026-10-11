@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import { mainBody, about } from "../../editable-stuff/config.js";
+import SocialIcon from "../common/SocialIcon";
 
 const MainBody = React.forwardRef((props, ref) => {
   return (
@@ -48,7 +49,7 @@ const MainBody = React.forwardRef((props, ref) => {
               aria-label={icon.name || icon.image}
               title={icon.name}
             >
-              <i className={`fab ${icon.image}`} />
+              <SocialIcon icon={icon} size="1.15em" />
             </a>
           ))}
         </div>
