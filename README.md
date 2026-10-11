@@ -82,12 +82,11 @@ Runs the application locally at `http://localhost:3000`.
 ### Production Build & Deployment
 
 ```bash
-# Build the optimized production bundle
+# Build the optimized production bundle locally
 npm run build
-
-# Deploy directly to GitHub Pages
-npm run deploy
 ```
+
+Deployment to GitHub Pages is fully automated via **GitHub Actions** (`.github/workflows/deploy.yml`). Any push to `main` automatically builds and deploys directly to **[https://luiz0992.github.io/](https://luiz0992.github.io/)**.
 
 ---
 
