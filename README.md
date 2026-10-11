@@ -6,8 +6,8 @@
 </p>
 
 <p align="center">
-  <a href="https://luiz0992.github.io/">
-    <img src="https://img.shields.io/badge/Website-luiz0992.github.io-blue?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Website" />
+  <a href="https://luizsantos.dev/">
+    <img src="https://img.shields.io/badge/Website-luizsantos.dev-blue?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Website" />
   </a>
   <a href="https://www.linkedin.com/in/luiz-fernando-guedes-dos-santos-641812109/">
     <img src="https://img.shields.io/badge/LinkedIn-Luiz%20dos%20Santos-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
@@ -22,7 +22,7 @@
 
 ---
 
-This repository contains the source code for my personal portfolio and academic research website, hosted on GitHub Pages at **[https://luiz0992.github.io/](https://luiz0992.github.io/)**.
+This repository contains the source code for my personal portfolio and academic research website at **[https://luizsantos.dev/](https://luizsantos.dev/)**.
 
 ## Overview
 
