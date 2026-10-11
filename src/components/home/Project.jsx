@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Container from "react-bootstrap/Container";
-import Jumbotron from "react-bootstrap/Jumbotron";
 import Row from "react-bootstrap/Row";
 import ProjectCard from "./ProjectCard";
 import axios from "axios";
@@ -18,7 +17,7 @@ const API = "https://api.github.com";
 const Project = ({ heading, username, length, specfic }) => {
   const allReposAPI = `${API}/users/${username}/repos?sort=updated&direction=desc`;
   const specficReposAPI = `${API}/repos/${username}`;
-  const dummyProjectsArr = new Array(length + specfic.length).fill(
+  const dummyProjectsArr = new Array(length + (specfic ? specfic.length : 0)).fill(
     dummyProject
   );
 
@@ -27,21 +26,19 @@ const Project = ({ heading, username, length, specfic }) => {
   const fetchRepos = useCallback(async () => {
     let repoList = [];
     try {
-      // getting all repos
-      const response = await axios.get(allReposAPI);
-      // slicing to the length
-      repoList = [...response.data.slice(0, length)];
-      // adding specified repos
-      try {
+      if (specfic && specfic.length > 0) {
         for (let repoName of specfic) {
-          const response = await axios.get(`${specficReposAPI}/${repoName}`);
-          repoList.push(response.data);
+          try {
+            const response = await axios.get(`${specficReposAPI}/${repoName}`);
+            repoList.push(response.data);
+          } catch (e) {
+            // continue
+          }
         }
-      } catch (error) {
-        console.error(error.message);
+      } else {
+        const response = await axios.get(allReposAPI);
+        repoList = [...response.data.slice(0, length)];
       }
-      // setting projectArray
-      // TODO: remove the duplication.
       setProjectsArray(repoList);
     } catch (error) {
       console.error(error.message);
@@ -53,9 +50,16 @@ const Project = ({ heading, username, length, specfic }) => {
   }, [fetchRepos]);
 
   return (
-    <Jumbotron fluid id="projects" className="bg-light m-0">
-      <Container className="">
-        <h2 className="display-4 pb-5 text-center">{heading}</h2>
+    <section id="projects" className="section-wrapper section-wrapper-alt">
+      <Container>
+        <div className="section-header">
+          <span className="section-tag">Open Source</span>
+          <h2 className="section-title">{heading}</h2>
+          <p className="section-subtitle">
+            Open-source machine learning starter kits, acceleration builds, and scientific research code.
+          </p>
+        </div>
+
         <Row>
           {projectsArray.length
             ? projectsArray.map((project, index) => (
@@ -73,8 +77,19 @@ const Project = ({ heading, username, length, specfic }) => {
                 />
               ))}
         </Row>
+
+        <div className="text-center mt-3">
+          <a
+            href={`https://github.com/${username}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline-secondary px-4 py-2 font-weight-bold"
+          >
+            <i className="fab fa-github mr-2" /> View More on GitHub
+          </a>
+        </div>
       </Container>
-    </Jumbotron>
+    </section>
   );
 };
 

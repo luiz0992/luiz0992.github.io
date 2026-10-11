@@ -1,73 +1,75 @@
 import React from "react";
-import Pdf from "../../editable-stuff/resume.pdf";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import { about } from "../../editable-stuff/config.js";
 
-import axios from "axios";
-
-const pictureLinkRegex = new RegExp(
-  /[(http(s)?):(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/
-);
-
-const AboutMe = ({ heading, message, link, imgSize, resume }) => {
-  const [profilePicUrl, setProfilePicUrl] = React.useState("");
-  const [showPic, setShowPic] = React.useState(Boolean(link));
-
-  React.useEffect(() => {
-    if (link && !pictureLinkRegex.test(link)) {
-      handleRequest();
-    } else {
-      setProfilePicUrl(link);
-    }
-  }, [link]);
-
-  const handleRequest = async () => {
-    const instaLink = "https://www.instagram.com/";
-    const instaQuery = "/?__a=1";
-    try {
-      const response = await axios.get(instaLink + link + instaQuery);
-      setProfilePicUrl(response.data.graphql.user.profile_pic_url_hd);
-    } catch (error) {
-      setShowPic(false);
-      console.error(error.message);
-    }
-  };
-
+const AboutMe = () => {
   return (
-    <div id="aboutme" className="jumbotron jumbotron-fluid m-0">
-      <div className="container container-fluid">
-        <div className="row">
-          <div className="col-5 d-none d-lg-block align-self-center">
-            {showPic && (
-              <img
-                className="border border-secondary rounded-circle"
-                src={profilePicUrl}
-                alt="profilepicture"
-                width={imgSize}
-                height={imgSize}
-              />
-            )}
-          </div>
-
-          <div className={`col-lg-${showPic ? "7" : "12"}`}>
-            <h2 className="display-4 mb-5 text-center">{heading}</h2>
-            <p className="lead text-center">{message}</p>
-            {resume && (
-              <p className="lead text-center">
-                <a
-                  className="btn btn-outline-dark btn-lg"
-                  href={resume}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  role="button"
-                  aria-label="Resume/CV"
-                >
-                  Resume
-                </a>
-              </p>
-            )}
-          </div>
+    <section id="aboutme" className="section-wrapper">
+      <Container>
+        <div className="section-header">
+          <span className="section-tag">Background & Focus</span>
+          <h2 className="section-title">{about.heading}</h2>
+          <p className="section-subtitle">
+            Bridging fundamental physics and deep mathematical rigor with production machine learning systems.
+          </p>
         </div>
-      </div>
-    </div>
+
+        <div className="about-card">
+          <Row className="align-items-center">
+            <Col lg={4} className="text-center mb-4 mb-lg-0">
+              <div className="profile-avatar-wrapper mb-3">
+                <img
+                  className="profile-avatar-img"
+                  src={about.imageLink}
+                  alt="Luiz Fernando Guedes dos Santos"
+                  width={about.imageSize || 300}
+                  height={about.imageSize || 300}
+                />
+              </div>
+              <div className="stats-grid">
+                {about.stats &&
+                  about.stats.map((stat, idx) => (
+                    <div key={`stat-${idx}`} className="stat-item">
+                      <div className="stat-value">{stat.value}</div>
+                      <div className="stat-label">{stat.label}</div>
+                    </div>
+                  ))}
+              </div>
+            </Col>
+
+            <Col lg={8} className="pl-lg-4">
+              <p className="about-text-lead">{about.message}</p>
+              {about.subMessage && <p className="about-text-body">{about.subMessage}</p>}
+
+              <div className="d-flex flex-wrap gap-2 mt-4" style={{ gap: "0.75rem" }}>
+                {about.resume && (
+                  <a
+                    className="btn btn-primary font-weight-bold px-4 py-2"
+                    href={about.resume}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <i className="fas fa-file-pdf mr-2" /> Download Full CV
+                  </a>
+                )}
+                {about.scholarUrl && (
+                  <a
+                    className="btn btn-outline-secondary font-weight-bold px-4 py-2"
+                    href={about.scholarUrl}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <i className="fas fa-graduation-cap mr-2" /> Google Scholar
+                  </a>
+                )}
+              </div>
+            </Col>
+          </Row>
+        </div>
+      </Container>
+    </section>
   );
 };
 

@@ -1,54 +1,60 @@
 import React from "react";
-import Typist from "react-typist";
 import Container from "react-bootstrap/Container";
-import Jumbotron from "react-bootstrap/Jumbotron";
+import { mainBody, about } from "../../editable-stuff/config.js";
 
-const MainBody = React.forwardRef(
-  ({ gradient, title, message, icons }, ref) => {
-    return (
-      <Jumbotron
-        fluid
-        id="home"
-        style={{
-          background: `linear-gradient(136deg,${gradient})`,
-          backgroundSize: "1200% 1200%",
-        }}
-        className="title bg-transparent bgstyle text-light min-vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
-      >
-        <div id="stars"></div>
-        <Container className="text-center">
-          <h1 ref={ref} className="display-1">
-            {title}
-          </h1>
-          <Typist className="lead typist" cursor={{ show: false }}>
-            {" "}
-            {message}
-          </Typist>
-          <div className="p-5">
-            {icons.map((icon, index) => (
-              <a
-                key={`social-icon-${index}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={icon.url}
-                aria-label={`My ${icon.image.split("-")[1]}`}
-              >
-                <i className={`fab ${icon.image}  fa-3x socialicons`} />
-              </a>
-            ))}
+const MainBody = React.forwardRef((props, ref) => {
+  return (
+    <section id="home" className="hero-section text-center">
+      <Container>
+        {mainBody.badge && (
+          <div className="hero-pill">
+            <i className="fas fa-certificate" /> {mainBody.badge}
           </div>
-          <a
-            className="btn btn-outline-light btn-lg "
-            href="#aboutme"
-            role="button"
-            aria-label="Learn more about me"
-          >
-            More about me
+        )}
+        <h1 ref={ref} className="hero-name">
+          {mainBody.title || `${mainBody.firstName} ${mainBody.middleName} ${mainBody.lastName}`}
+        </h1>
+        <p className="hero-tagline">
+          {mainBody.tagline || mainBody.message}
+        </p>
+
+        <div className="hero-actions">
+          <a className="btn-hero-primary text-decoration-none" href="#experience">
+            <i className="fas fa-briefcase mr-2" /> View Experience
           </a>
-        </Container>
-      </Jumbotron>
-    );
-  }
-);
+          <a className="btn-hero-secondary text-decoration-none" href="#publications">
+            <i className="fas fa-book-open mr-2" /> Research & Publications
+          </a>
+          {about.resume && (
+            <a
+              className="btn-hero-secondary text-decoration-none"
+              href={about.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fas fa-file-pdf mr-2" /> Resume (PDF)
+            </a>
+          )}
+        </div>
+
+        <div className="hero-socials">
+          {mainBody.icons.map((icon, index) => (
+            <a
+              key={`hero-social-${index}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={icon.url}
+              className="hero-social-link"
+              aria-label={icon.name || icon.image}
+              title={icon.name}
+            >
+              <i className={`fab ${icon.image}`} />
+            </a>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+});
 
 export default MainBody;

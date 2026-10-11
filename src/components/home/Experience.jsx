@@ -1,30 +1,27 @@
-import React from 'react';
+import React from "react";
+import Container from "react-bootstrap/Container";
 import ExperienceCard from "./ExperienceCard";
-import {
-    Container,
-    Row,
-    Jumbotron
-} from "react-bootstrap";
 
-const Experience = ({experiences}) => {
-    return (  
-        <section className="section">
-            <Container>
-                <Jumbotron fluid className="bg-white">
-                    <h2 className="display-4 mb-5 text-center">
-                        {experiences.heading}
-                    </h2>
-                    <Row>
-                        {
-                            experiences.data.map(data => {
-                                return <ExperienceCard key={data.company} data={data} />
-                            })
-                        }
-                    </Row>
-                </Jumbotron>
-            </Container>
-        </section>
-    );
-}
- 
+const Experience = ({ experiences }) => {
+  return (
+    <section id="experience" className="section-wrapper section-wrapper-alt">
+      <Container>
+        <div className="section-header">
+          <span className="section-tag">Career Journey</span>
+          <h2 className="section-title">{experiences.heading}</h2>
+          <p className="section-subtitle">
+            From cutting-edge physics research at NASA to leading enterprise AI systems and production LLM platforms.
+          </p>
+        </div>
+
+        <div className="experience-list">
+          {experiences.data.map((data, index) => (
+            <ExperienceCard key={`exp-${index}`} data={data} />
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+};
+
 export default Experience;

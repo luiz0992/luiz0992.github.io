@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
 import Skeleton from "react-loading-skeleton";
 import axios from "axios";
 
@@ -13,43 +12,59 @@ const ProjectCard = ({ value }) => {
     languages_url,
     pushed_at,
   } = value;
-  return (
-    <Col md={6}>
-      <Card className="card shadow-lg p-3 mb-5 bg-white rounded">
-        <Card.Body>
-          <Card.Title as="h5">{name || <Skeleton />} </Card.Title>
-          <Card.Text>{(!description)?"":description || <Skeleton count={3} />} </Card.Text>
-          {svn_url ? <CardButtons svn_url={svn_url} /> : <Skeleton count={2} />}
-          <hr />
-          {languages_url ? (
-            <Language languages_url={languages_url} repo_url={svn_url} />
-          ) : (
-            <Skeleton count={3} />
-          )}
-          {value ? (
-            <CardFooter star_count={stargazers_count} repo_url={svn_url} pushed_at={pushed_at} />
-          ) : (
-            <Skeleton />
-          )}
-        </Card.Body>
-      </Card>
-    </Col>
-  );
-};
 
-const CardButtons = ({ svn_url }) => {
   return (
-    <>
-      <a
-        href={`${svn_url}/archive/master.zip`}
-        className="btn btn-outline-secondary mr-3"
-      >
-        <i className="fab fa-github" /> Clone Project
-      </a>
-      <a href={svn_url} target=" _blank" className="btn btn-outline-secondary">
-        <i className="fab fa-github" /> Repo
-      </a>
-    </>
+    <Col lg={6} className="mb-4">
+      <div className="modern-project-card">
+        <div className="d-flex justify-content-between align-items-start mb-2">
+          <h4 className="project-name mb-0">{name || <Skeleton width={140} />}</h4>
+          {svn_url && (
+            <a
+              href={svn_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary"
+              aria-label="GitHub Repository"
+            >
+              <i className="fab fa-github fa-lg" />
+            </a>
+          )}
+        </div>
+
+        <p className="project-desc">
+          {description || (value.name ? "Open-source research repository." : <Skeleton count={2} />)}
+        </p>
+
+        {languages_url ? (
+          <Language languages_url={languages_url} repo_url={svn_url} />
+        ) : (
+          <Skeleton count={1} />
+        )}
+
+        <div className="d-flex justify-content-between align-items-center pt-3 border-top mt-auto">
+          {svn_url ? (
+            <a
+              href={svn_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-sm btn-outline-primary font-weight-bold"
+            >
+              <i className="fab fa-github mr-1" /> View Repository
+            </a>
+          ) : (
+            <Skeleton width={100} />
+          )}
+
+          {value.pushed_at && (
+            <CardFooter
+              star_count={stargazers_count}
+              repo_url={svn_url}
+              pushed_at={pushed_at}
+            />
+          )}
+        </div>
+      </div>
+    </Col>
   );
 };
 
@@ -59,9 +74,9 @@ const Language = ({ languages_url, repo_url }) => {
   const handleRequest = useCallback(async () => {
     try {
       const response = await axios.get(languages_url);
-      return setData(response.data);
+      setData(response.data);
     } catch (error) {
-      console.error(error.message);
+      // silent catch for rate limits
     }
   }, [languages_url]);
 
@@ -69,71 +84,43 @@ const Language = ({ languages_url, repo_url }) => {
     handleRequest();
   }, [handleRequest]);
 
-  const array = [];
+  const array = Object.keys(data || {});
   let total_count = 0;
-  for (let index in data) {
-    array.push(index);
-    total_count += data[index];
+  for (let key in data) {
+    total_count += data[key];
   }
 
+  if (!array.length) return null;
+
   return (
-    <div className="pb-3">
-      Languages:{" "}
-      {array.length
-        ? array.map((language) => (
-            <a
-              key={language} 
-              className="badge badge-light card-link"
-              href={repo_url + `/search?l=${language}`}
-              target=" _blank"
-            >
-              {language}:{" "}
-              {Math.trunc((data[language] / total_count) * 1000) / 10} %
-            </a>
-          ))
-        : "code yet to be deployed."}
+    <div className="d-flex flex-wrap gap-1 mb-3" style={{ gap: "0.35rem" }}>
+      {array.slice(0, 4).map((language) => (
+        <span key={language} className="exp-tag" style={{ fontSize: "0.75rem" }}>
+          {language}
+          {total_count > 0 && ` (${Math.trunc((data[language] / total_count) * 100)}%)`}
+        </span>
+      ))}
     </div>
   );
 };
 
 const CardFooter = ({ star_count, repo_url, pushed_at }) => {
-  const [updated_at, setUpdated_at] = useState("0 mints");
-
-  const handleUpdatetime = useCallback(() => {
-    const date = new Date(pushed_at);
-    const nowdate = new Date();
-    const diff = nowdate.getTime() - date.getTime();
-    const hours = Math.trunc(diff / 1000 / 60 / 60);
-
-    if (hours < 24) {
-      if (hours < 1) return setUpdated_at("just now");
-      let measurement = hours === 1 ? "hour" : "hours";
-      return setUpdated_at(`${hours.toString()} ${measurement} ago`);
-    } else {
-      const options = { day: "numeric", month: "long", year: "numeric" };
-      const time = new Intl.DateTimeFormat("en-US", options).format(date);
-      return setUpdated_at(`on ${time}`);
-    }
-  }, [pushed_at]);
-
-  useEffect(() => {
-    handleUpdatetime();
-  }, [handleUpdatetime]);
-
   return (
-    <p className="card-text">
-      <a
-        href={repo_url + "/stargazers"}
-        target=" _blank"
-        className="text-dark text-decoration-none"
-      >
-        <span className="text-dark card-link mr-4">
-          <i className="fab fa-github" /> Stars{" "}
-          <span className="badge badge-dark">{star_count}</span>
-        </span>
-      </a>
-      <small className="text-muted">Updated {updated_at}</small>
-    </p>
+    <div className="d-flex align-items-center text-muted" style={{ fontSize: "0.82rem" }}>
+      {star_count > 0 && (
+        <a
+          href={`${repo_url}/stargazers`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-muted mr-3 text-decoration-none"
+        >
+          <i className="fas fa-star text-warning mr-1" /> {star_count}
+        </a>
+      )}
+      <span>
+        <i className="far fa-clock mr-1" /> {new Date(pushed_at).toLocaleDateString()}
+      </span>
+    </div>
   );
 };
 
